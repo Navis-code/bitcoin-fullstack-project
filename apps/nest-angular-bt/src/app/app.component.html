@@ -10,7 +10,13 @@
     <p>accountName --> {{account.accountName}}</p>
     <p>category --> {{account.category}}</p>
     <p>tag --> {{account.tag}}</p>
-    <p>balance --> {{account.balance}}</p>
-    <p>availableBalance --> {{account.availableBalance}}</p>
+    <div>
+      <p>balance --> {{account.balance}} BT</p>
+      <p>balance --> {{account.balance | exchangeToDollar:(currentExchangeRate$ | async)}}</p>
+    </div>
+    <div>
+      <p>availableBalance --> {{account.availableBalance}} BT</p>
+      <p>availableBalance --> {{account.availableBalance | exchangeToDollar:(currentExchangeRate$ | async)}}</p>
+    </div>
   </div>
 </ng-container>
