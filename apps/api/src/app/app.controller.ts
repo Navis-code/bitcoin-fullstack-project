@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 
-import { Message } from '@bitcoin-fullstack-project/api-interfaces';
+import { Account, Message } from '@bitcoin-fullstack-project/api-interfaces';
 
 import { AppService } from './app.service';
 
@@ -16,5 +16,10 @@ export class AppController {
   @Get('current-exchange-rate')
   getExchangeRateData(): number {
     return this.appService.getExchangeRateData();
+  }
+
+  @Get('accounts')
+  getAccountsData(): Account[] {
+    return this.appService.getAccountsData();
   }
 }
