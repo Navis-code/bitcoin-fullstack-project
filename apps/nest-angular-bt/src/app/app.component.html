@@ -3,4 +3,14 @@
 </div>
 <div>Message: {{ hello$ | async | json }}</div>
 <div>currentExchangeRate: {{ currentExchangeRate$ | async | json }}</div>
-<div>accounts: {{ accounts$ | async | json }}</div>
+<!-- <div>accounts: {{ accounts$ | async | json }}</div> -->
+
+<ng-container *ngFor="let account of accounts$ | async">
+  <div style="border: 1px solid #ddd">
+    <p>accountName --> {{account.accountName}}</p>
+    <p>category --> {{account.category}}</p>
+    <p>tag --> {{account.tag}}</p>
+    <p>balance --> {{account.balance}}</p>
+    <p>availableBalance --> {{account.availableBalance}}</p>
+  </div>
+</ng-container>
