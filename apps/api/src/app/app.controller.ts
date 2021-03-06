@@ -12,4 +12,9 @@ export class AppController {
   getData(): Message {
     return this.appService.getData();
   }
+
+  @Get('current-exchange-rate')
+  getExchangeRateData(): number {
+    return this.appService.getExchangeRateData();
+  }
 }

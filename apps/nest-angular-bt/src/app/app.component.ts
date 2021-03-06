@@ -9,5 +9,6 @@ import { Message } from '@bitcoin-fullstack-project/api-interfaces';
 })
 export class AppComponent {
   hello$ = this.http.get<Message>('/api/hello');
+  currentExchangeRate$ = this.http.get<number>('/api/current-exchange-rate');
   constructor(private http: HttpClient) {}
 }

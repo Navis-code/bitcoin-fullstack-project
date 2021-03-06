@@ -4,6 +4,9 @@ import { Message } from '@bitcoin-fullstack-project/api-interfaces';
 @Injectable()
 export class AppService {
   getData(): Message {
-    return { message: 'Welcome to api!' };
+    return { message: 'Welcome to api test!' };
+  }
+  getExchangeRateData(): number {
+    return 100;
   }
 }
