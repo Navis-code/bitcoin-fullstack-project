@@ -7,7 +7,7 @@ export class AccountsController {
   constructor(private readonly accountsService: AccountsService) {}
 
   @Get()
-  getAllAccounts(): Account[] {
-    return this.accountsService.getAllAccounts();
+  async getAllAccounts(): Promise<Account[]> {
+    return await this.accountsService.getAllAccounts();
   }
 }

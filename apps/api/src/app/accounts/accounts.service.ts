@@ -1,11 +1,22 @@
 import { Account } from '@bitcoin-fullstack-project/api-interfaces';
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model, Document } from 'mongoose';
+
+interface AccountModel extends Account, Document {}
 
 @Injectable()
 export class AccountsService {
-  accounts: Account[] = [];
+  constructor(
+    @InjectModel('Account') private readonly accountModel: Model<AccountModel>
+  ) {}
 
-  getAllAccounts(): Account[] {
+  async getAllAccounts(): Promise<Account[]> {
+    const result = await this.accountModel.find();
+    return result;
+  }
+
+  getAllAccountsFake(): Account[] {
     return [
       {
         accountName: 'Test Account 1',
