@@ -1,3 +1,4 @@
+import { ExchangeRateModule } from './exchange-rate/exchange-rate.module';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
@@ -6,7 +7,11 @@ import { AppService } from './app.service';
 import { AccountsModule } from './accounts/accounts.module';
 
 @Module({
-  imports: [AccountsModule, MongooseModule.forRoot(process.env.DB_URL)],
+  imports: [
+    AccountsModule,
+    ExchangeRateModule,
+    MongooseModule.forRoot(process.env.DB_URL),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

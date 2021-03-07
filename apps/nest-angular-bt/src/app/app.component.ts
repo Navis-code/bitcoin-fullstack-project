@@ -8,7 +8,7 @@ import { Account } from '@bitcoin-fullstack-project/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  currentExchangeRate$ = this.http.get<number>('/api/current-exchange-rate');
+  currentExchangeRate$ = this.http.get<number>('/api/exchange-rate');
   accounts$ = this.http.get<Account[]>('/api/accounts');
   constructor(private http: HttpClient) {}
 }
