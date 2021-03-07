@@ -16,6 +16,25 @@ export class AccountsService {
     return result;
   }
 
+  async insertAccount({
+    accountName,
+    category,
+    tag,
+    balance,
+    availableBalance,
+  }: Account) {
+    const newAccount = new this.accountModel({
+      accountName,
+      category,
+      tag,
+      balance,
+      availableBalance,
+    });
+    const result = await newAccount.save();
+    console.log({ result });
+    return result.id;
+  }
+
   getAllAccountsFake(): Account[] {
     return [
       {

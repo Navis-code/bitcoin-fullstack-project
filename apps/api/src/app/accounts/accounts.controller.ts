@@ -1,10 +1,18 @@
 import { Account } from '@bitcoin-fullstack-project/api-interfaces';
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AccountsService } from './accounts.service';
 
 @Controller('accounts')
 export class AccountsController {
   constructor(private readonly accountsService: AccountsService) {}
+
+  @Post()
+  async addAccount(@Body() completeBody: Account) {
+    const generatedAccountId = await this.accountsService.insertAccount(
+      completeBody
+    );
+    return { id: generatedAccountId };
+  }
 
   @Get()
   async getAllAccounts(): Promise<Account[]> {
