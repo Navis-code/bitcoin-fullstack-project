@@ -1,9 +1,7 @@
 <div style="text-align: center">
   <h1>Welcome to nest-angular-bt!</h1>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>
 <div>currentExchangeRate: {{ currentExchangeRate$ | async | json }}</div>
-<!-- <div>accounts: {{ accounts$ | async | json }}</div> -->
 
 <ng-container *ngFor="let account of accounts$ | async">
   <div style="border: 1px solid #ddd">
