@@ -58,8 +58,7 @@ export class AppComponent implements OnInit {
         this.currentExchangeRate$ = currentvalue;
       });
   }
-  animEnd(event) {
-    console.log(event);
+  animEnd(event: AnimationEvent): void {
     this.blink = false;
   }
 }
