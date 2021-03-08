@@ -1,20 +1,22 @@
-<div style="text-align: center">
-  <h1>Welcome to nest-angular-bt!</h1>
-</div>
-<div>currentExchangeRate: {{ currentExchangeRate$ | async | json }}</div>
-
-<ng-container *ngFor="let account of accounts$ | async">
-  <div style="border: 1px solid #ddd">
-    <p>accountName --> {{account.accountName}}</p>
-    <p>category --> {{account.category}}</p>
-    <p>tag --> {{account.tag}}</p>
-    <div>
-      <p>balance --> {{account.balance}} BT</p>
-      <p>balance --> {{account.balance | exchangeToDollar:(currentExchangeRate$ | async)}}</p>
-    </div>
-    <div>
-      <p>availableBalance --> {{account.availableBalance}} BT</p>
-      <p>availableBalance --> {{account.availableBalance | exchangeToDollar:(currentExchangeRate$ | async)}}</p>
-    </div>
+<div>
+  <div style="text-align: center">
+    <h1>Welcome to nest-angular-bt!</h1>
   </div>
-</ng-container>
+  <div>currentExchangeRate: {{ currentExchangeRate$ }}</div>
+
+  <ng-container *ngFor="let account of accounts$ | async">
+    <div style="border: 1px solid #ddd">
+      <p>accountName --> {{account.accountName}}</p>
+      <p>category --> {{account.category}}</p>
+      <p>tag --> {{account.tag}}</p>
+      <div>
+        <p>balance --> {{account.balance}} BT</p>
+        <p>balance --> {{account.balance | exchangeToDollar:(currentExchangeRate$)}}</p>
+      </div>
+      <div>
+        <p>availableBalance --> {{account.availableBalance}} BT</p>
+        <p>availableBalance --> {{account.availableBalance | exchangeToDollar:(currentExchangeRate$)}}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>

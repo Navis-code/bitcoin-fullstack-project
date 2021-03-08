@@ -9,7 +9,7 @@ import { WebSocketService } from './web-socket.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  currentExchangeRate$ = this.http.get<number>('/api/exchange-rate');
+  currentExchangeRate$;
   accounts$ = this.http.get<Account[]>('/api/accounts');
   constructor(
     private http: HttpClient,
@@ -21,5 +21,8 @@ export class AppComponent implements OnInit {
       console.log(data);
     });
     this.webSocketService.emit('get-exchange', 'start');
+    this.webSocketService.listen('exchange-rate').subscribe((data) => {
+      this.currentExchangeRate$ = Number(data);
+    });
   }
 }
