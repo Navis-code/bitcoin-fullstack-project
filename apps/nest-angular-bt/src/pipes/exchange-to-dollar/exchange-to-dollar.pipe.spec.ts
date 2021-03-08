@@ -8,7 +8,7 @@ describe('ExchangeToDollarPipe', () => {
   it('should return dollar string value operation', () => {
     const value = 20;
     const currentExchangeRate = 100;
-    const expectedValue = '$2000';
+    const expectedValue = '$2000.00';
 
     const pipe = new ExchangeToDollarPipe();
 

@@ -5,8 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ExchangeToDollarPipe implements PipeTransform {
   transform(value: number, currentExchangeRate: number): string {
+    console.log('PIPE', currentExchangeRate);
     const dollarValue = value * currentExchangeRate;
 
-    return `$${dollarValue}`;
+    return `$${dollarValue.toFixed(2)}`;
   }
 }
