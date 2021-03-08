@@ -1,5 +1,5 @@
-import { Account } from '@bitcoin-fullstack-project/api-interfaces';
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Account, Statement } from '@bitcoin-fullstack-project/api-interfaces';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { AccountsService } from './accounts.service';
 
 @Controller('accounts')
@@ -17,5 +17,10 @@ export class AccountsController {
   @Get()
   async getAllAccounts(): Promise<Account[]> {
     return await this.accountsService.getAllAccounts();
+  }
+
+  @Get(':id')
+  async getStatements(@Param('id') id: string): Promise<Statement[]> {
+    return await this.accountsService.getStatementsByAccountId(id);
   }
 }
