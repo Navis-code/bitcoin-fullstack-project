@@ -3,6 +3,7 @@ import {
   OnGatewayConnection,
   OnGatewayDisconnect,
   OnGatewayInit,
+  SubscribeMessage,
   WebSocketGateway,
   WebSocketServer,
 } from '@nestjs/websockets';
@@ -23,6 +24,19 @@ export class AppGateway
   }
   handleConnection(client: Socket) {
     this.logger.log(`Client connected: ${client.id}`);
-    this.wss.emit('test', 'Hello from server!');
+    this.wss.emit('connection', 'connected');
+  }
+
+  @SubscribeMessage('get-exchange')
+  handleExchangeRate(client: Socket, payload: string) {
+    const exchangeRate = 49033.2;
+    this.wss.emit('exchange-rate', exchangeRate);
+    const interval = setInterval(() => {
+      this.wss.emit(
+        'exchange-rate',
+        (Math.random() * 50000 + exchangeRate).toFixed(2)
+      );
+    }, 30000);
+    return exchangeRate;
   }
 }
