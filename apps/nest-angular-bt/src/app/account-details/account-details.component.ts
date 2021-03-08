@@ -8,7 +8,7 @@ import { WrapperApiService } from '../services/wrapper-api.service';
   styleUrls: ['./account-details.component.scss'],
 })
 export class AccountDetailsComponent implements OnInit {
-  statement$: any;
+  statement$;
   displayedColumns: string[] = [
     'orderId',
     'orderCode',
@@ -23,7 +23,6 @@ export class AccountDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      console.log(params);
       this.statement$ = this.apiWrapper.getAccountDetailsById(params.accountId);
     });
   }

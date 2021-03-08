@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { io, Socket } from 'socket.io-client';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { io, Socket } from 'socket.io-client';
 })
 export class WebSocketService {
   socket: Socket;
+  currentExchangeRate$ = new Subject<number>();
   readonly uri: string = 'http://localhost:4001/';
 
   constructor() {
@@ -23,5 +24,16 @@ export class WebSocketService {
 
   emit(eventName: string, data: string) {
     this.socket.emit(eventName, data);
+  }
+
+  init() {
+    this.listen('connection').subscribe((data) => {
+      console.log(data);
+    });
+    this.emit('get-exchange', 'start');
+
+    this.listen('exchange-rate').subscribe((data: number) =>
+      this.currentExchangeRate$.next(data)
+    );
   }
 }

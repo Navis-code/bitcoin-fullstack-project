@@ -4,13 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ExchangeToDollarPipe } from '../pipes/exchange-to-dollar/exchange-to-dollar.pipe';
-import { WebSocketService } from './web-socket.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AccountListComponent } from './account-list/account-list.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { AppComponent } from './app.component';
 import { WrapperApiService } from './services/wrapper-api.service';
+import { WebSocketService } from './services/web-socket.service';
 
 @NgModule({
   declarations: [

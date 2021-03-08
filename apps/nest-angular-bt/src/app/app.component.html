@@ -3,7 +3,7 @@
     <span>BT Account</span>
     <div style="margin: auto; display:flex; align-items: center;">
       <mat-icon>attach_money</mat-icon>
-      <span> {{ currentExchangeRate$ }}</span>
+      <span> {{ currentExchangeRate | async }}</span>
     </div>
     <mat-icon>notifications_none</mat-icon>
   </mat-toolbar-row>

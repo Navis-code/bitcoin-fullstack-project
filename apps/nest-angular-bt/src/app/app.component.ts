@@ -1,5 +1,5 @@
-import { WebSocketService } from './web-socket.service';
 import { Component, OnInit } from '@angular/core';
+import { WebSocketService } from './services/web-socket.service';
 
 @Component({
   selector: 'bitcoin-fullstack-project-root',
@@ -7,16 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  currentExchangeRate$;
+  currentExchangeRate;
 
   constructor(private webSocketService: WebSocketService) {}
   ngOnInit(): void {
-    this.webSocketService.listen('connection').subscribe((data) => {
-      console.log(data);
-    });
-    this.webSocketService.emit('get-exchange', 'start');
-    this.webSocketService
-      .listen('exchange-rate')
-      .subscribe((data) => (this.currentExchangeRate$ = data));
+    this.webSocketService.init();
+    this.currentExchangeRate = this.webSocketService.currentExchangeRate$;
   }
 }
