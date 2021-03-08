@@ -17,7 +17,8 @@
     "paths": {
       "@bitcoin-fullstack-project/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
-      ]
+      ],
+      "@bitcoin-fullstack-project/material": ["libs/material/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

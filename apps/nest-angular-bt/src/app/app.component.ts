@@ -11,6 +11,14 @@ import { WebSocketService } from './web-socket.service';
 export class AppComponent implements OnInit {
   currentExchangeRate$;
   accounts$ = this.http.get<Account[]>('/api/accounts');
+  displayedColumns: string[] = [
+    'accountName',
+    'category',
+    'tag',
+    'balance',
+    'availableBalance',
+  ];
+
   constructor(
     private http: HttpClient,
     private webSocketService: WebSocketService
