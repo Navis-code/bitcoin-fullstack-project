@@ -1,3 +1,4 @@
+import { pairwise, startWith } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Account } from '@bitcoin-fullstack-project/api-interfaces';
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
     'balance',
     'availableBalance',
   ];
+  valueIncrement: boolean;
+  valueDecrement: boolean;
 
   constructor(
     private http: HttpClient,
@@ -29,8 +32,25 @@ export class AppComponent implements OnInit {
       console.log(data);
     });
     this.webSocketService.emit('get-exchange', 'start');
-    this.webSocketService.listen('exchange-rate').subscribe((data) => {
-      this.currentExchangeRate$ = Number(data);
-    });
+    // this.webSocketService.listen('exchange-rate').subscribe((data) => {
+    //   this.currentExchangeRate$ = Number(data);
+    // });
+    this.webSocketService
+      .listen('exchange-rate')
+      .pipe(startWith(0), pairwise())
+      .subscribe(([previousValue, currentvalue]) => {
+        console.log(previousValue);
+        console.log(currentvalue);
+        if (currentvalue > previousValue) {
+          this.valueIncrement = true;
+          this.valueDecrement = false;
+          console.log('INCREMENTA');
+        } else {
+          this.valueIncrement = false;
+          this.valueDecrement = true;
+          console.log('BAJA');
+        }
+        this.currentExchangeRate$ = currentvalue;
+      });
   }
 }

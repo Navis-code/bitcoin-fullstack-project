@@ -1,4 +1,4 @@
-import { MaterialModule } from './../../../../libs/material/src/lib/material.module';
+import { MaterialModule } from '@bitcoin-fullstack-project/material';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
