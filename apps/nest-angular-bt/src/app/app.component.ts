@@ -32,9 +32,7 @@ export class AppComponent implements OnInit {
       console.log(data);
     });
     this.webSocketService.emit('get-exchange', 'start');
-    // this.webSocketService.listen('exchange-rate').subscribe((data) => {
-    //   this.currentExchangeRate$ = Number(data);
-    // });
+
     this.webSocketService
       .listen('exchange-rate')
       .pipe(startWith(0), pairwise())

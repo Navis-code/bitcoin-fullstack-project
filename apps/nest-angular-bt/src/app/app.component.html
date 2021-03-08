@@ -40,8 +40,9 @@
     <ng-container matColumnDef="balance">
       <th mat-header-cell *matHeaderCellDef> Balance </th>
       <td mat-cell *matCellDef="let account">
-        <p>balance --> {{account.balance}} BT</p>
-        <p [class.increment]="valueIncrement" [class.decrement]="valueDecrement">balance --> {{account.balance |
+        <p style="margin:5px 0px">{{account.balance}} BT</p>
+        <p style="margin:5px 0px" [class.increment]="valueIncrement" [class.decrement]="valueDecrement">
+          {{account.balance |
           exchangeToDollar:(currentExchangeRate$)}}
         </p>
       </td>
@@ -50,8 +51,10 @@
     <ng-container matColumnDef="availableBalance">
       <th mat-header-cell *matHeaderCellDef> Available balance </th>
       <td mat-cell *matCellDef="let account">
-        <p>availableBalance --> {{account.availableBalance}} BT</p>
-        <p>availableBalance --> {{account.availableBalance | exchangeToDollar:(currentExchangeRate$)}}</p>
+        <p style="margin:5px 0px">{{account.availableBalance}} BT</p>
+        <p style="margin:5px 0px" [class.increment]="valueIncrement" [class.decrement]="valueDecrement">
+          {{account.availableBalance |
+          exchangeToDollar:(currentExchangeRate$)}}</p>
       </td>
     </ng-container>
 
