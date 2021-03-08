@@ -195,6 +195,282 @@ const fakeStatements = [
       },
     ],
   },
+  {
+    accountId: '2P1RU',
+    statements: [
+      {
+        orderId: 'HHHAA',
+        orderCode: 'SETTLEMENT',
+        credit: 11,
+        balance: 11.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 9.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 14,
+        balance: 11.05,
+      },
+    ],
+  },
+  {
+    accountId: 'C42YA',
+    statements: [
+      {
+        orderId: 'JJASL',
+        orderCode: 'SETTLEMENT',
+        credit: 0.22,
+        balance: 1.05,
+      },
+      {
+        orderId: 'SAAW',
+        orderCode: 'ON RAMP',
+        credit: 0.5,
+        balance: 1.05,
+      },
+      {
+        orderId: 'PASLL',
+        orderCode: 'DEPOSIT',
+        debit: 8,
+        balance: 6.05,
+      },
+    ],
+  },
+  {
+    accountId: '8O3KO',
+    statements: [
+      {
+        orderId: 'LLKSA',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'IQUUP',
+        orderCode: 'ON RAMP',
+        credit: 13.5,
+        balance: 11.05,
+      },
+      {
+        orderId: 'ASS12',
+        orderCode: 'DEPOSIT',
+        debit: 18.5,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: 'MUW6L',
+    statements: [
+      {
+        orderId: 'PAL2',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'SOIQP',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLSS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: 'MSZWG',
+    statements: [
+      {
+        orderId: 'FFIL',
+        orderCode: 'SETTLEMENT',
+        credit: 10.5,
+        balance: 12.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 7.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 11,
+        balance: 13.05,
+      },
+    ],
+  },
+  {
+    accountId: 'R4IVR',
+    statements: [
+      {
+        orderId: 'GGASS',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: 'K6CCB',
+    statements: [
+      {
+        orderId: 'GGASS',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: 'F405Q',
+    statements: [
+      {
+        orderId: 'GGASS',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: 'ZY9CE',
+    statements: [
+      {
+        orderId: 'GGASS',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: '8P0VK',
+    statements: [
+      {
+        orderId: 'GGASS',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: '79N7A',
+    statements: [
+      {
+        orderId: 'GGASS',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
+  {
+    accountId: 'JR5E6',
+    statements: [
+      {
+        orderId: 'GGASS',
+        orderCode: 'SETTLEMENT',
+        credit: 10,
+        balance: 21.05,
+      },
+      {
+        orderId: 'OKASS',
+        orderCode: 'ON RAMP',
+        credit: 3.5,
+        balance: 10.05,
+      },
+      {
+        orderId: 'PLAASS',
+        orderCode: 'DEPOSIT',
+        debit: 18,
+        balance: 16.05,
+      },
+    ],
+  },
 ];
 
 async function seed() {

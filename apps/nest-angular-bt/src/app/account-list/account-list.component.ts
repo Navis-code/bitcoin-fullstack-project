@@ -57,7 +57,7 @@ export class AccountListComponent implements OnInit {
   animEnd(event: AnimationEvent): void {
     this.blink = false;
   }
-  onRowClicked(row: Account) {
+  onRowClicked(row) {
     console.log('ROW clicked; ', row);
     this.router.navigate([`account/${row.id}`]);
   }

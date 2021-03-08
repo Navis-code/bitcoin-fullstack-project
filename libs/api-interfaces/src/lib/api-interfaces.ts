@@ -4,5 +4,4 @@ export interface Account {
   tag: string;
   balance: number;
   availableBalance: number;
-  id: string;
 }
