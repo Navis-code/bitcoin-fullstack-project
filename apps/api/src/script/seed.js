@@ -481,7 +481,7 @@ async function seed() {
 
   try {
     await client.connect();
-    console.log('connected to server ✅');
+    console.log('connected to db ✅');
 
     const collection = client.db('Bitcointest').collection('accounts');
     collection.drop();
