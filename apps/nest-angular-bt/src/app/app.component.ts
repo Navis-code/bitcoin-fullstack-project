@@ -3,11 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Account } from '@bitcoin-fullstack-project/api-interfaces';
 import { WebSocketService } from './web-socket.service';
+import { transition, trigger } from '@angular/animations';
+import { blinkAnimation } from '../utils/animations/blinking';
 
 @Component({
   selector: 'bitcoin-fullstack-project-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [trigger('blink', [transition('false => true', blinkAnimation)])],
 })
 export class AppComponent implements OnInit {
   currentExchangeRate$;
@@ -21,6 +24,7 @@ export class AppComponent implements OnInit {
   ];
   valueIncrement: boolean;
   valueDecrement: boolean;
+  blink = false;
 
   constructor(
     private http: HttpClient,
@@ -39,16 +43,23 @@ export class AppComponent implements OnInit {
       .subscribe(([previousValue, currentvalue]) => {
         console.log(previousValue);
         console.log(currentvalue);
-        if (currentvalue > previousValue) {
+        if (currentvalue > previousValue && previousValue !== 0) {
           this.valueIncrement = true;
           this.valueDecrement = false;
           console.log('INCREMENTA');
-        } else {
+          this.blink = true;
+        }
+        if (currentvalue < previousValue && previousValue !== 0) {
           this.valueIncrement = false;
           this.valueDecrement = true;
           console.log('BAJA');
+          this.blink = true;
         }
         this.currentExchangeRate$ = currentvalue;
       });
+  }
+  animEnd(event) {
+    console.log(event);
+    this.blink = false;
   }
 }

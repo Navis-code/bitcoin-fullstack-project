@@ -41,7 +41,8 @@
       <th mat-header-cell *matHeaderCellDef> Balance </th>
       <td mat-cell *matCellDef="let account">
         <p style="margin:5px 0px">{{account.balance}} BT</p>
-        <p style="margin:5px 0px" [class.increment]="valueIncrement" [class.decrement]="valueDecrement">
+        <p style="margin:5px 0px" [@blink]="blink" (@blink.done)="animEnd($event)" [class.increment]="valueIncrement"
+          [class.decrement]="valueDecrement">
           {{account.balance |
           exchangeToDollar:(currentExchangeRate$)}}
         </p>
@@ -52,7 +53,8 @@
       <th mat-header-cell *matHeaderCellDef> Available balance </th>
       <td mat-cell *matCellDef="let account">
         <p style="margin:5px 0px">{{account.availableBalance}} BT</p>
-        <p style="margin:5px 0px" [class.increment]="valueIncrement" [class.decrement]="valueDecrement">
+        <p style="margin:5px 0px" [@blink]="blink" (@blink.done)="animEnd($event)" [class.increment]="valueIncrement"
+          [class.decrement]="valueDecrement">
           {{account.availableBalance |
           exchangeToDollar:(currentExchangeRate$)}}</p>
       </td>
