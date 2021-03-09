@@ -9,7 +9,7 @@
 - npm run seed to populate your DB with fake data
 - You should be ready to go!
 - npm run start:server --> TO START API
-- npm run start:frint --> TO START ANGULAR
+- npm run start:front --> TO START ANGULAR
 - Go to localhost:4200
 
 This project was generated using [Nx](https://nx.dev).
