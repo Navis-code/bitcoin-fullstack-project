@@ -1,4 +1,4 @@
-import { Account, Statement } from '@bitcoin-fullstack-project/api-interfaces';
+import type { Account, Statement } from '@bitcoin-fullstack-project/api-interfaces';
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { AccountsService } from './accounts.service';
 
